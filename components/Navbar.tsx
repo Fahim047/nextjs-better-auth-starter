@@ -25,7 +25,7 @@ import { Separator } from "./ui/separator";
 import { authClient } from "@/lib/auth-client";
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
-
+import { navLinks } from "@/constants";
 const NavLink = ({
   href,
   children,
@@ -58,8 +58,6 @@ export default function ProfessionalNavbar() {
   const pathname = usePathname();
   const [isSheetOpen, setSheetOpen] = useState(false);
   const { setTheme } = useTheme();
-
-  const navLinks = [{ href: "/about", label: "About" }];
 
   const handleLogout = () => {
     authClient.signOut();
