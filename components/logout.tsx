@@ -1,19 +1,13 @@
 "use client";
 
-import { authClient } from "@/lib/auth-client";
 import { Button } from "./ui/button";
-import { useRouter } from "next/navigation";
+import { useSignOut } from "@/hooks/use-signout";
 
 export function Logout() {
-  const router = useRouter();
-
-  const handleLogout = async () => {
-    await authClient.signOut();
-    router.push("/");
-  };
+  const handleLogout = useSignOut();
 
   return (
-    <Button variant={"outline"} onClick={handleLogout}>
+    <Button variant={"destructive"} onClick={handleLogout}>
       Logout
     </Button>
   );
