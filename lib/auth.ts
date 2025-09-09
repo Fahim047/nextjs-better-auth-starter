@@ -23,7 +23,7 @@ export const auth = betterAuth({
     enabled: true,
     sendResetPassword: async ({ user, url }) => {
       await resend.emails.send({
-        from: "giftora@resend.dev",
+        from: "betterauth@resend.dev",
         to: [user.email],
         subject: "Reset your password",
         react: PasswordResetEmail({
@@ -37,7 +37,7 @@ export const auth = betterAuth({
   emailVerification: {
     sendVerificationEmail: async ({ user, url }) => {
       const { data, error } = await resend.emails.send({
-        from: "giftora@resend.dev",
+        from: "betterauth@resend.dev",
         to: [user.email],
         subject: "Verify your email address",
         react: VerificationEmail({
